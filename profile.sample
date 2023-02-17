@@ -1,0 +1,14 @@
+profile_name: my_profile
+github_token: github_token_with_repo_rights
+github_user: your_username
+github_repo: repo_where_secret_is_located
+github_secret_name: name_of_secret
+cert_organization_name: k8s_group
+cert_common_name: k8s_name
+k8s_ca_cert_path: /etc/kubernetes/pki/ca.crt
+k8s_ca_key_path: /etc/kubernetes/pki/ca.key
+kubeconfig_tpl_path: ./kubeconfig.tpl
+renewal_days: 364
+cluster_name: k8s_cluster
+cluster_endpoint: https://192.168.1.1:6443
+cluster_namespace: namespace
