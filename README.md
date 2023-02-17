@@ -4,7 +4,7 @@ A script that renews and updates a Kubernetes config file being held as a Secret
 
 This script is for the scenario where:
 
-  * You are using Github Runners to deploy/interact with a Kubernetes cluster, and are using a kubeconfig file stored as a secret as your repo
+  * You are using Github Runners to deploy/interact with a Kubernetes cluster, and are using a kubeconfig file stored as a secret in your repo
   * The kubeconfig file, containing your cluster's CA certificate, client certificate, and client key, expired eventually, and you're getting an Error: Unauthorized when the Github workflow runs the step(s) requiring cluster authorization
   * Manually updating this kubeconfig file on Github Secrets is rather tedious 
 
@@ -15,7 +15,7 @@ Tested on Python 3.8.10.  PyOpenSSL >23.0.0 is also required.
 This script does the following:
 
   1. Loads the profile file from the `-p` or `--profile` argument
-  2. Makes a subfolder in the current folder named `[timestamp][profile_name]
+  2. Makes a subfolder in the current folder named `[timestamp][profile_name]`
   3. Generates a new private key and writes it to the subfolder
   4. Generates a CSR with specified Common Name and Organization.  Depending on your cluster's configuration, you should have these corresponding to the user or the group that has the privileges to interact with your cluster. Writes the CSR request to the subfolder.
   5. Loads the specified Kubernetes CA certificate (i.e. the one usually at `/etc/kubernetes/pki/ca.crt` if you created the cluster with kubeadm)
@@ -40,7 +40,7 @@ python3 script.py -p profile.sample --dry-run
 
 `profile.sample` is a required yaml file with the following fields:
 
-```
+```yaml
 # name of profile (will be used as subfolder name and prefixes of generated files)
 profile_name: my_profile 
 # github token with repo access
