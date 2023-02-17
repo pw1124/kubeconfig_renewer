@@ -28,6 +28,7 @@ This script does the following:
 
 In essence, it creates a new signed certificate and updates the Github Secret.
 
+### Sample Commands
 ```
 python3 script.py -p profile.sample
 ```
